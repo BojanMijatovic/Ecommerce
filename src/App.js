@@ -8,7 +8,6 @@ import Header from './components/header/Header';
 import SignInAndUpPage from './pages/signInAndUpPage/SignInAndUpPage';
 
 import { auth } from './firebase/firebase.utils';
-import { render } from '@testing-library/react';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
